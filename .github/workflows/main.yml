@@ -16,7 +16,7 @@ jobs:
 
     env:
       BUILD_CONFIG: 'Release'
-      PROJ: '.\src\BlazorPanzoom\BlazorPanzoom.csproj'
+      PROJ: 'BlazorPanzoom.csproj'
 
     runs-on: ubuntu-latest
 
@@ -43,7 +43,10 @@ jobs:
         dotnet-version: 7.0.x
 
     - name: Build
-      run: dotnet build $PROJ --configuration $BUILD_CONFIG -p:Version=$BUILD_VERSION --no-restore
+      run: |
+        cd .\src\BlazorPanzoom
+        ls
+        dotnet build $PROJ --configuration $BUILD_CONFIG -p:Version=$BUILD_VERSION --no-restore
 
     - name: Publish
       if: startsWith(github.ref, 'refs/heads/release')
