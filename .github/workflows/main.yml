@@ -48,7 +48,7 @@ jobs:
       run: nuget restore ./src/BlazorPanzoom.sln
 
     - name: Build
-      run: dotnet build ./src/BlazorPanzoom/BlazorPanzoom.csproj --configuration $BUILD_CONFIG -p:Version=$BUILD_VERSION --no-restore
+      run: dotnet build ./src/BlazorPanzoom/BlazorPanzoom.csproj --configuration $env:BUILD_CONFIG -p:Version=$env:BUILD_VERSION --no-restore
 
     - name: Publish
       if: startsWith(github.ref, 'refs/heads/release')
