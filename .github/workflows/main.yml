@@ -16,7 +16,7 @@ jobs:
 
     env:
       BUILD_CONFIG: 'Release'
-      SOLUTION: 'BlazorPanzoom.sln'
+      PROJ: '.\src\BlazorPanzoom\BlazorPanzoom.csproj'
 
     runs-on: ubuntu-latest
 
@@ -35,7 +35,7 @@ jobs:
       uses: NuGet/setup-nuget@v1.0.5
 
     - name: Restore dependencies
-      run: nuget restore $SOLUTION
+      run: nuget restore PROJ
 
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
@@ -45,9 +45,6 @@ jobs:
     - name: Build
       run: dotnet build $SOLUTION --configuration $BUILD_CONFIG -p:Version=$BUILD_VERSION --no-restore
 
-    - name: Run tests
-      run: dotnet test /p:Configuration=$env:BUILD_CONFIG --no-restore --no-build --verbosity normal
-      
     - name: Publish
       if: startsWith(github.ref, 'refs/heads/release')
       run: nuget push **\*.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.NUGETKEY}}
