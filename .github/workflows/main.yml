@@ -36,7 +36,7 @@ jobs:
 
     - name: Restore dependencies
       run: |
-        cd .\src\BlazorPanzoom
+        cd /src/BlazorPanzoom
         ls
         nuget restore $PROJ
 
