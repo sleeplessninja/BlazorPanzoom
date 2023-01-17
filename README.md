@@ -1,4 +1,4 @@
-# BlazorPanzoom
+# BlazorPanzoom (fork of shaigem)
 [![Nuget version](https://img.shields.io/nuget/v/BlazorPanzoom)](https://www.nuget.org/packages/BlazorPanzoom/)
 
 BlazorPanzoom is a library for Blazor that wraps around timmywil's JavaScript
