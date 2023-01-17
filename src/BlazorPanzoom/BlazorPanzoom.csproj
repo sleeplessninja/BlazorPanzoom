@@ -5,6 +5,7 @@
         <ResolveStaticWebAssetsInputsDependsOn>
             $(ResolveStaticWebAssetsInputsDependsOn);
         </ResolveStaticWebAssetsInputsDependsOn>
+		<PackageId>Nin.BlazorPanzoom</PackageId>
         <PackageVersion>0.2.1</PackageVersion>
         <Description>Blazor wrapper for timmywil's panzoom library that helps you enable zooming and panning of Blazor components and elements easier.</Description>
         <Copyright>Copyright 2023 James Schafer</Copyright>
@@ -14,7 +15,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Title>BlazorPanzoom</Title>
+        <Title>NinBlazorPanzoom</Title>
         <Authors>Ronnie Tran, James Schafer, and Contributors</Authors>
         <RepositoryUrl>https://github.com/sleeplessninja/BlazorPanzoom</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
