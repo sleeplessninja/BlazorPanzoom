@@ -1,11 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30114.105
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorPanzoom", "BlazorPanzoom\BlazorPanzoom.csproj", "{54C590E7-D04A-400F-9814-6B1AE8DD88FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorPanzoom", "BlazorPanzoom\BlazorPanzoom.csproj", "{54C590E7-D04A-400F-9814-6B1AE8DD88FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorPanzoom.Demo", "BlazorPanzoom.Demo\BlazorPanzoom.Demo.csproj", "{10B599CC-622E-48D4-B135-06F36FF6027A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorPanzoom.Demo", "BlazorPanzoom.Demo\BlazorPanzoom.Demo.csproj", "{10B599CC-622E-48D4-B135-06F36FF6027A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{AFC21F38-82E2-4149-A31E-DCE2EE7EDE68}"
+	ProjectSection(SolutionItems) = preProject
+		..\.build\GetBuildVersion.ps1 = ..\.build\GetBuildVersion.ps1
+		..\.github\workflows\main.yml = ..\.github\workflows\main.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{54C590E7-D04A-400F-9814-6B1AE8DD88FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -45,7 +48,10 @@ Global
 		{10B599CC-622E-48D4-B135-06F36FF6027A}.Release|x86.ActiveCfg = Release|Any CPU
 		{10B599CC-622E-48D4-B135-06F36FF6027A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{8896CDFC-BE83-4EE6-9BBF-204DCCA88E8F} = {BCC9C42C-8E7C-4FB6-BAC7-73C3B356B2D6}
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {78E55812-C49F-4884-BCAD-F06DB526307E}
 	EndGlobalSection
 EndGlobal
