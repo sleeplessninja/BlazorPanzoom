@@ -15,6 +15,10 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
+    env:
+      BUILD_CONFIG: 'Release'
+      SOLUTION: 'MySolution.sln'
+      
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -23,24 +27,19 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v1.0.5
+
      # Install .NET Core SDK
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v1.8.1
         with:
-            dotnet-version: 5.0.203
+            dotnet-version: 7.0.x
   
      # Publish
-      - name: Publish .NET Core Project
-        run: dotnet publish src/BlazorPanzoom.Demo/BlazorPanzoom.Demo.csproj -c Release -o build --nologo
-        
-     # Add .nojekyll file so GitHub will read files/folders with underscores
-      - name: Add .nojekyll File
-        run: touch build/wwwroot/.nojekyll
-        
-     # Publish the website
-      - name: GitHub Pages Deploy Action
-        uses: JamesIves/github-pages-deploy-action@4.1.4
-        with:
-          branch: gh-pages
-          folder: build/wwwroot
-        
+      - name: Restore dependencies
+        run: nuget restore $SOLUTION
+
+
+      - name: Build
+        run: dotnet build $SOLUTION --configuration $BUILD_CONFIG --no-restore
